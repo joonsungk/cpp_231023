@@ -3,7 +3,13 @@
 #include <cstdio>
 // C++은 C의 헤더를 위의 형태로 제공하고 있습니다.
 //  stdio.h  -> cstdio
+//   printf    std::printf
+
 // stdlib.h  -> cstdlib
+//   exit      std::exit
+//   malloc    std::malloc
+//   free      std::free
+
 // string.h  -> cstring
 
 // https://devdocs.io
