@@ -22,6 +22,7 @@ int main()
 #endif
 
 // C++11, Uniform Initialization(일관된 초기화)
+#if 0
 int main()
 {
     // Copy Initialization
@@ -35,4 +36,33 @@ int main()
 
     int x2[3] { 10, 20, 30 };
     Point pt2 { 10, 20 };
+}
+#endif
+
+// C/C++
+// => 암묵적인 변환으로 인해 오류가 발생할 수 있습니다.
+// => Uniform Initialization
+//   : Preventing Narrow
+//   - 실수 타입이 정수 타입으로의 암묵적인 변환,
+//     더 넓은 표현 범위의 정수가 더 적은 표현 범위의 정수로의 암묵적인 변환
+//     허용하지 않습니다.
+//  => 반드시 명시적인 변환을 사용해야 합니다.
+
+#include <climits> // limits.h
+
+int main()
+{
+    double d = 3.14;
+    if (d > INT_MAX || d < INT_MIN) {
+        // ...
+    } else {
+        int n1 = { (int)d };
+    }
+
+    long long x = 10000000000000LL;
+    if (x > INT_MAX || d < INT_MIN) {
+
+    } else {
+        int n2 { (int)x };
+    }
 }
