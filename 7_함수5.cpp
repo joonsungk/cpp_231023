@@ -20,6 +20,8 @@ TYPE Square(TYPE x) { return x * x; }
 
 int main()
 {
+    // 인자의 타입을 통해 TYPE을 결정합니다.
+    // => 암묵적인 타입 추론
     cout << Square(10) << endl;
     // TYPE -> int
 
@@ -28,4 +30,7 @@ int main()
 
     cout << Square(100000000LL) << endl;
     // TYPE -> long long
+
+    // 명시적으로 타입을 지정할 수 있습니다.
+    cout << Square<double>(10.0F) << endl;
 }
