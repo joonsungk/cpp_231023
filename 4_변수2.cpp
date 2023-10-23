@@ -48,6 +48,7 @@ int main()
 //     허용하지 않습니다.
 //  => 반드시 명시적인 변환을 사용해야 합니다.
 
+#include <iostream>
 #include <climits> // limits.h
 
 int main()
@@ -57,15 +58,16 @@ int main()
     int x2[2] = { (int)d1, (int)d2 };
 
     double d = 3.14;
+
     if (d > INT_MAX || d < INT_MIN) {
-        // ...
+        std::cout << "Overflow" << std::endl;
     } else {
         int n1 = { (int)d };
     }
 
     long long x = 10000000000000LL;
     if (x > INT_MAX || x < INT_MIN) {
-
+        std::cout << "Overflow" << std::endl;
     } else {
         int n2 { (int)x };
     }
