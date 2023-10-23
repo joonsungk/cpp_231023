@@ -8,7 +8,9 @@ using namespace std;
 */
 
 //               U _add
-extern "C" int add(int a, int b);
+
+#include "add.h"
+// extern "C" int add(int a, int b);
 
 int main()
 {

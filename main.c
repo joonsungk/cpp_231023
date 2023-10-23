@@ -1,8 +1,8 @@
 // main.c
 
 #include <stdio.h>
-
-int add(int a, int b);
+#include "add.h"
+// int add(int a, int b);
 
 int main(void)
 {
