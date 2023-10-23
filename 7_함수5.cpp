@@ -15,6 +15,7 @@ long long Square(long long x) { return x * x; }
 //    전달된 인자의 타입에 따른 코드 메모리 사용량이 존재합니다.
 // => 인라인 최적화가 가능한 경우, 코드 메모리 사용량을 최적화할 수 있습니다.
 
+#if 0
 template <typename TYPE>
 TYPE Square(TYPE x) { return x * x; }
 
@@ -33,4 +34,18 @@ int main()
 
     // 명시적으로 타입을 지정할 수 있습니다.
     cout << Square<double>(10.0F) << endl;
+}
+#endif
+
+template <typename T1, typename T2> // 타입 파라미터
+void foo(T1 a, T2 b) // 값 파라미터
+{
+}
+
+int main()
+{
+    foo(10, 3.14);
+    // foo<int, double>(10, 3.14);
+    //    |-----------||--------|
+    //      타입 인자       값 인자
 }
