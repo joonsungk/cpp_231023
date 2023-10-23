@@ -63,6 +63,7 @@ int main()
 
 // 주의 사항
 // 1) using 지시어는 현업에서 이용하지 않는 것이 좋습니다.
+// 2) 헤더파일에서는 절대 using 선언과 using 지시어를 사용하면 안됩니다.
 
 // using namespace std;
 // std::count 표준 함수가 존재합니다.
