@@ -34,7 +34,7 @@ void foo(int* result)
 
 // foo(NULL);
 // foo(&x);
-
+#if 0
 int main()
 {
     int x = 10;
@@ -47,4 +47,56 @@ int main()
     Increment2(NULL);
 
     cout << x << endl;
+}
+#endif
+
+#if 0
+void PrintArray(int* x, int n)
+{
+    for (int i = 0; i < n; ++i) {
+        cout << x[i] << endl;
+    }
+}
+
+int main()
+{
+    int x1[3] = { 10, 20, 30 };
+    PrintArray(x1, 3);
+
+    int x2[5] = { 10, 20, 30, 40, 50 };
+    PrintArray(x2, 5);
+}
+#endif
+
+#if 0
+void PrintArray(int (&r)[3])
+{
+    for (auto e : r) {
+        cout << e << endl;
+    }
+}
+
+void PrintArray(int (&r)[5])
+{
+    for (auto e : r) {
+        cout << e << endl;
+    }
+}
+#endif
+
+template <typename TYPE>
+inline void PrintArray(TYPE& r)
+{
+    for (auto e : r) {
+        cout << e << endl;
+    }
+}
+
+int main()
+{
+    int x1[3] = { 10, 20, 30 };
+    PrintArray(x1);
+
+    int x2[5] = { 10, 20, 30, 40, 50 };
+    PrintArray(x2);
 }
