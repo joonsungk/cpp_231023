@@ -1,5 +1,6 @@
 // 3_iostream.cpp
 #include <iostream>
+#include <iomanip> // setw
 using namespace std;
 
 int main()
@@ -19,4 +20,7 @@ int main()
     // : hex, uppercase
     cout << hex << n << endl;
     cout << hex << uppercase << n << endl;
+
+    printf("%10x\n", n);
+    cout << setw(10) << hex << uppercase << n << endl;
 }
