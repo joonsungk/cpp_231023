@@ -11,6 +11,10 @@ long long Square(long long x) { return x * x; }
 // => 코드를 컴파일 시간에 생성할 수 있는 템플릿을 사용하면 좋습니다.
 
 // 함수 템플릿
+// => 적은 코드로 다양한 타입에서 동작하는 함수를 정의할 수 있습니다.
+//    전달된 인자의 타입에 따른 코드 메모리 사용량이 존재합니다.
+// => 인라인 최적화가 가능한 경우, 코드 메모리 사용량을 최적화할 수 있습니다.
+
 template <typename TYPE>
 TYPE Square(TYPE x) { return x * x; }
 
