@@ -6,6 +6,8 @@
 // stdlib.h  -> cstdlib
 // string.h  -> cstring
 
+// https://devdocs.io
+
 int main()
 {
     // C++은 C의 모든 표준 라이브러리 함수를 std의 이름 공간을 통해
