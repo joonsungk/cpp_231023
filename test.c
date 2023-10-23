@@ -15,8 +15,18 @@ int main(void)
 }
 #endif
 
+#if 0
 int main(void)
 {
     const char* s = "hello";
     // s[0] = 'x'; /* 미정의 동작 */
+}
+#endif
+
+// void foo(void) { }
+void foo(int a, int b) { }
+// 0000000100003f90 T _foo
+
+int main(void)
+{
 }
