@@ -52,6 +52,10 @@ int main()
 
 int main()
 {
+    double d1 = 3.14;
+    double d2 = 4.5;
+    int x2[2] = { (int)d1, (int)d2 };
+
     double d = 3.14;
     if (d > INT_MAX || d < INT_MIN) {
         // ...
@@ -60,7 +64,7 @@ int main()
     }
 
     long long x = 10000000000000LL;
-    if (x > INT_MAX || d < INT_MIN) {
+    if (x > INT_MAX || x < INT_MIN) {
 
     } else {
         int n2 { (int)x };
