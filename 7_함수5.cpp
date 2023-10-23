@@ -40,6 +40,9 @@ int main()
 template <typename T1, typename T2> // 타입 파라미터
 void foo(T1 a, T2 b) // 값 파라미터
 {
+    // T1 temp = a;
+    // auto temp = a;
+    decltype(a) temp;
 }
 
 // C++ 표준 라이브러리: STL(Standard Template Library)
