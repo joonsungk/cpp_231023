@@ -42,6 +42,7 @@ void foo(T1 a, T2 b) // 값 파라미터
 {
 }
 
+// C++ 표준 라이브러리: STL(Standard Template Library)
 int main()
 {
     foo(10, 3.14);
