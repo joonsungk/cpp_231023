@@ -41,7 +41,7 @@ int main()
 #endif
 
 // 3) using 지시어
-
+#if 0
 namespace audio {
 void Play() { std::cout << "Audio Play" << std::endl; }
 void Init() { }
@@ -58,4 +58,20 @@ int main()
 
     Play();
     Init();
+}
+#endif
+
+// 주의 사항
+// 1) using 지시어는 현업에서 이용하지 않는 것이 좋습니다.
+
+// using namespace std;
+// std::count 표준 함수가 존재합니다.
+using std::cout;
+using std::endl;
+
+int count = 0;
+
+int main()
+{
+    cout << ++count << endl;
 }
