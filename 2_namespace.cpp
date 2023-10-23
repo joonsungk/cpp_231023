@@ -15,6 +15,8 @@ void VideoInit() { }
 // 3. C++은 표준에서 제공하는 모든 기능을 std의 이름 공간을 통해 제공합니다.
 // 4. namespace를 사용하면, 프로그램의 각 요소를 관련된 요소끼리 그룹화 할 수 있습니다.
 
+// 5. namespace는 소문자로 작성하는 것이 일반적입니다.
+
 // audio.cpp
 namespace audio {
 void Init() { std::cout << "Audio Init" << std::endl; }
