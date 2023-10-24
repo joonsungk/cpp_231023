@@ -22,10 +22,12 @@ ld: Undefined symbols:
 7_함수6.cpp:26:13: error: call to deleted function 'Square'
     cout << Square(3.14) << endl;
 */
+
 double Square(double x) = delete;
 
 int main()
 {
+
     cout << Square(10) << endl;
     // cout << Square(3.14) << endl;
 }

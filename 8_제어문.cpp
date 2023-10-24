@@ -12,6 +12,11 @@ int main()
         cout << x[i] << endl;
     }
 
+    // 모든 요소를 두배로 변경하고 싶습니다.
+    for (auto& e : x) {
+        e *= 2;
+    }
+
     // C++11, Ranged-for
     for (auto e : x) {
         cout << e << endl;
@@ -19,6 +24,7 @@ int main()
 }
 #endif
 
+#if 1
 int Process()
 {
     // 실패할 경우, -1을 반환합니다.
@@ -60,6 +66,7 @@ int main()
     if (int* ret = Process2(); ret == NULL) {
     }
 }
+#endif
 
 #if 0
 int main()
@@ -72,6 +79,7 @@ int main()
 
     int* ret2 = Process2();
     if (ret2 == NULL) {
+        // ...
     }
 }
 #endif

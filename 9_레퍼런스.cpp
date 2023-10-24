@@ -5,11 +5,10 @@ using namespace std;
 // 1. C++에서 레퍼런스 타입이 도입되었습니다.
 //  => 기존 메모리에 새로운 이름을 부여합니다.
 
-#if 0
+#if 1
 int main()
 {
     int n = 100;
-
     int& r = n;
 
     n = 42;
