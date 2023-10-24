@@ -49,7 +49,8 @@ public:
 
 int main()
 {
-    Stack s1(10);
+    // Stack s1(100);
+    Stack s1 { 100 };
     // 구조체 변수: 상태와 행위 => 객체(object)
 
     // s1.Init();
