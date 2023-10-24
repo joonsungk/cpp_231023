@@ -11,9 +11,11 @@ using namespace std;
 //   : 접근 지정자
 //     1) public: 외부에서 접근할 수 있습니다.
 //     2) private: 외부에서 접근할 수 없고, 오직 멤버 함수를 통해서만 접근이 가능합니다.
+//      struct는 기본 접근 지정자가 public 이지만, class는 기본 접근 지정자가 private 입니다.
+//
 
 // 캡슐화: 상태 + 행위
-struct Stack {
+class Stack {
 private:
     // 멤버 데이터: 상태
     int buff[10];
