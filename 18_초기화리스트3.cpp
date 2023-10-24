@@ -41,10 +41,14 @@ class Rect {
 public:
     // Rect() : leftTop{}
     // {}
-
     Rect()
         // : leftTop(10, 20)
         : leftTop { 10, 20 } // !!!
+    {
+    }
+
+    Rect(int x, int y)
+        : leftTop { x, y }
     {
     }
 };
