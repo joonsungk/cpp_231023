@@ -42,3 +42,11 @@ int main(void)
     int arr[c];
 }
 #endif
+
+#include <stdlib.h>
+
+int main()
+{
+    int* p = malloc(sizeof(int) * 4);
+    // C에서는 void*를 구체적인 포인터타입으로의 암묵적인 변환을 허용합니다.
+}
