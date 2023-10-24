@@ -47,6 +47,7 @@ public:
     }
 };
 
+#if 1
 int main()
 {
     // Stack s1(100);
@@ -63,3 +64,24 @@ int main()
     cout << s1.Pop() << endl;
     cout << s1.Pop() << endl;
 }
+#endif
+
+#if 0
+class Sample {
+public:
+    Sample() { cout << "Sample()" << endl; }
+    ~Sample() { cout << "~Sample()" << endl; }
+};
+
+Sample s;
+
+int main()
+{
+    cout << "main start" << endl;
+    {
+        // Sample s; // 지역 객체
+    }
+
+    cout << "main end" << endl;
+}
+#endif
