@@ -14,8 +14,14 @@ using namespace std;
 // 4. C++11, 상수 표현식에 사용할 수 있는 키워드입니다.
 //  => constexpr
 
+#define AAA 10
+
 int main()
 {
+    int n = AAA; // int n = 10;
+
+    int n = 10 + 5;
+
     // constexpr const int c = 100; // 컴파일 시간 상수
     constexpr int c = 100;
     printf("%d\n", c);

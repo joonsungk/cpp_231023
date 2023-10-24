@@ -6,6 +6,7 @@ struct Complex {
     int re;
     int im;
 };
+// typedef struct Complex COMPLEX;
 
 union Data {
     int a;

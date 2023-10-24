@@ -17,7 +17,7 @@ long long Square(long long x) { return x * x; }
 
 #if 0
 template <typename TYPE>
-TYPE Square(TYPE x) { return x * x; }
+inline TYPE Square(TYPE x) { return x * x; }
 
 int main()
 {

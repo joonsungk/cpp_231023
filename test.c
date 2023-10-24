@@ -23,6 +23,7 @@ int main(void)
 }
 #endif
 
+#if 0
 // void foo(void) { }
 void foo(int a, int b) { }
 // 0000000100003f90 T _foo
@@ -30,3 +31,14 @@ void foo(int a, int b) { }
 int main(void)
 {
 }
+#endif
+
+#if 0
+// GCC, Clang => VLA
+int main(void)
+{
+    int c = 10;
+
+    int arr[c];
+}
+#endif

@@ -11,6 +11,12 @@ void AudioInit() { }
 void VideoInit() { }
 #endif
 
+void foo() { }
+
+namespace aaa {
+void foo() { }
+}
+
 // 2. C++에서는 이름 충돌의 문제를 해결하기 위한 namespace 문법을 제공합니다.
 // 3. C++은 표준에서 제공하는 모든 기능을 std의 이름 공간을 통해 제공합니다.
 // 4. namespace를 사용하면, 프로그램의 각 요소를 관련된 요소끼리 그룹화 할 수 있습니다.
@@ -38,6 +44,7 @@ namespace mp4 {
 
 int main()
 {
+    // :: - 범위 연산자
     audio::Init();
     video::Init();
 

@@ -21,10 +21,13 @@ int main()
     // - Decay 예외
     //  1) sizeof
     cout << sizeof(x) << endl;
+    cout << sizeof(int[3]) << endl;
 
     //  2) &(주소 연산자)
     int(*p2)[3] = &x;
     // p2 -------> int[3]
+
+    //  3) reference
 }
 #endif
 
@@ -53,15 +56,32 @@ int main()
 }
 #endif
 
+#if 0
 int main()
 {
     const int n = 100;
     // n: const int
 
     // const가 따라가지 않습니다.
-    // auto x = n;
+    // auto x = n; // x -> int
     // x = 100;
 
     const auto x = n;
     // x = 100;
+}
+#endif
+
+int main()
+{
+    int n = 10;
+    int& r = n; // r: int&
+    r = 100;
+
+    // auto r2 = r; // r2 -> int
+    // r2 = 42;
+
+    auto& r2 = r;
+    r2 = 42;
+
+    cout << n << endl;
 }

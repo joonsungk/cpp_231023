@@ -22,7 +22,7 @@ int main()
 #endif
 
 // C++11, Uniform Initialization(일관된 초기화)
-#if 0
+#if 1
 int main()
 {
     // Copy Initialization
