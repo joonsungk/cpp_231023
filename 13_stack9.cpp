@@ -9,6 +9,7 @@ using namespace std;
 
 #include <stack>
 
+#if 0
 int main()
 {
     stack<int> s;
@@ -27,4 +28,26 @@ int main()
     s.pop();
     cout << s.top() << endl;
     s.pop();
+}
+#endif
+
+// 선형 자료구조(컨테이너/컬렉션)
+// - vector: 연속된 메모리를 사용하는 동적 배열
+// -   list: 연결 리스트
+#include <vector>
+#include <list>
+
+int main()
+{
+    int arr[3];
+    vector<int> v;
+    v.push_back(10);
+    v.push_back(20);
+    v.push_back(30);
+
+    cout << v[0] << endl;
+
+    for (auto e : v) {
+        cout << e << endl;
+    }
 }
