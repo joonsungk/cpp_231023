@@ -17,7 +17,8 @@ using namespace std;
 //  "객체를 생성하는 다양한 방법을 제공할 수 있습니다."
 
 class Stack {
-    int buff[10];
+    // int buff[10];
+    int* buff;
     int top;
 
 public:
@@ -25,12 +26,14 @@ public:
     {
         cout << "Stack(int)" << endl;
         top = 0;
+        buff = new int[size];
     }
 
     Stack()
     {
         cout << "Stack()" << endl;
         top = 0;
+        buff = new int[10];
     }
 
     void Push(int n)
