@@ -26,7 +26,7 @@ int main()
 // C++11, NULL을 대체하는 nullptr이 도입되었습니다.
 // => nullptr의 타입은 nullptr_t 타입입니다.
 //    포인터 타입으로의 암묵적인 변환을 허용하고, 논리식에서 참/거짓을 판단할 수 있습니다.
-
+#if 0
 int main()
 {
     foo(0);
@@ -38,4 +38,13 @@ int main()
     if (p) {
         // ...
     }
+}
+#endif
+
+// C++에서는 참/거짓을 표현하는 기본 타입이 존재합니다.
+// => bool
+//   true: 참
+//  false: 거짓
+int main()
+{
 }
