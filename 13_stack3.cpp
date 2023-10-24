@@ -31,6 +31,8 @@ struct Stack {
 int main()
 {
     Stack s1;
+    // 구조체 변수: 상태와 행위 => 객체(object)
+
     s1.Init();
 
     s1.Push(10);
