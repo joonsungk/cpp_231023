@@ -40,7 +40,7 @@ int main()
 int main()
 {
     int arr[3];
-    vector<int> v;
+    vector<int> v = { 10, 20, 30, 40 };
     v.push_back(10);
     v.push_back(20);
     v.push_back(30);
