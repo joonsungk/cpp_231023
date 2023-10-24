@@ -26,9 +26,11 @@ public:
 
 int main()
 {
-    Object* p1 = new Object;
+    // Object* p1 = new Object;
+    // delete p1;
 
-    delete p1;
+    Object* p2 = new Object[3];
+    delete[] p2;
 }
 
 #if 0
