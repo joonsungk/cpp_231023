@@ -28,9 +28,11 @@ public:
         top = 0;
     }
 
+    // void Push(Stack* this, int n)
     void Push(int n)
     {
         buff[top++] = n;
+        // this->buff[(this->top)++] = n;
     }
 
     int Pop()

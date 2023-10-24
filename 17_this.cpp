@@ -7,6 +7,9 @@ class Point {
     int y;
 
 public:
+    // thiscall: 멤버 함수의 호출 방식
+    //   - this를 통해 멤버 함수를 호출한 객체의 주소가 암묵적으로 전달됩니다.
+
     // void Set(Point* this, int a, int b)
     void Set(int a, int b)
     {
