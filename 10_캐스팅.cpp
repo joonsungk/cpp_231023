@@ -24,6 +24,8 @@ using namespace std;
 //   : 메모리를 재해석하는 목적으로 사용하는 연산자입니다.
 
 //  - const_cast
+//   : 메모리의 상수성을 제거해서, 타입의 불일치 문제를 해결하기 위해 사용하는 연산자입니다.
+
 //  - dynamic_cast
 
 int main()
@@ -43,7 +45,6 @@ int main()
     // unsigned char* px = (unsigned char*)&x;
     // unsigned char* px = static_cast<unsigned char*>(&x); /* Error! */
     unsigned char* px = reinterpret_cast<unsigned char*>(&x);
-
     // double* pf = reinterpret_cast<double*>(&x);
     // *pf = 3.14; /* 미정의 동작 */
 
@@ -53,7 +54,10 @@ int main()
     const int* pd = &data;
 
     // const int* -> int* : 타입의 불일치 문제를 해결하기 위해서
-    int* pd2 = (int*)pd;
+    // int* pd2 = (int*)pd;
+    // int* pd2 = static_cast<int*>(pd); /* Error! */
+    // int* pd2 = reinterpret_cast<int*>(pd); /* Error! */
+    int* pd2 = const_cast<int*>(pd); // const를 제거할 때
 }
 
 #if 0
