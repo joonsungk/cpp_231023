@@ -32,7 +32,7 @@ private:
     ~Sample() { cout << "~Sample()" << endl; }
 };
 
-Sample s;
+// Sample s;
 
 int main()
 {
