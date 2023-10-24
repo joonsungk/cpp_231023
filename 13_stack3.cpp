@@ -17,12 +17,12 @@ using namespace std;
 // 캡슐화: 상태 + 행위
 class Stack {
     // private:
-    // 멤버 데이터: 상태
+    // 멤버 데이터: 상태 - property
     int buff[10];
     int top;
 
 public:
-    // 멤버 함수: 행위
+    // 멤버 함수: 행위 - method
     void Init()
     {
         top = 0;
