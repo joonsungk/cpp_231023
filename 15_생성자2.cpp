@@ -24,6 +24,7 @@ public:
 // 1) 객체라면, 소멸자 호출
 // 2) 동적 메모리 해지
 
+#if 0
 int main()
 {
     // Object* p1 = new Object;
@@ -32,6 +33,7 @@ int main()
     Object* p2 = new Object[3];
     delete[] p2;
 }
+#endif
 
 #if 0
 int main()
@@ -41,3 +43,17 @@ int main()
     free(p1);
 }
 #endif
+
+int main()
+{
+    // Object* p = new Object(); // 동적 메모리 할당 -> 기본 생성자 호출
+
+    // Object(); -> 임시 객체 생성 문법
+
+    Object* p = new Object;
+    // 동적 메모리 할당 -> 기본 생성자 호출
+    delete p;
+
+    Object p2;
+    // 스택 메모리 할당 -> 기본 생성자 호출
+}
