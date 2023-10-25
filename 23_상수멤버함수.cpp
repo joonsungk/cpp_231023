@@ -49,4 +49,16 @@ int main()
 {
     Point pt { 10, 20 };
     foo(pt);
+
+    Point pt1 { 10, 20 };
+    const Point pt2 { 20, 30 }; // 상수 객체(불변 객체, Immutable Object)
+    // 상수 객체는 상수 멤버 함수만 호출이 가능합니다.
+
+    const Point* p = &pt1;
+    // const Point*
+    // => 상수 멤버 함수만 호출이 가능합니다.
+
+    const Point& r = pt;
+    // const Point&
+    // => 상수 멤버 함수만 호출이 가능합니다.
 }
