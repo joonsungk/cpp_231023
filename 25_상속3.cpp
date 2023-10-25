@@ -57,6 +57,8 @@ int main()
 {
     Dog d;
     d.Print();
+
+    // d.GetAge();
 }
 
 // Design Pattern 23가지 패턴, 에릭 감마
