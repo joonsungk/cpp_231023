@@ -2,6 +2,12 @@
 #include <iostream>
 using namespace std;
 
+// 멤버 데이터: 객체의 상태
+//  멤버 함수: 객체의 행위
+
+// 정적 멤버 데이터: 클래스의 상태 / class property
+//  정적 멤버 함수: 클래스의 행위 / class method
+
 class Car {
     static int cnt;
 
