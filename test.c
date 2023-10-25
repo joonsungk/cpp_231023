@@ -64,8 +64,50 @@ int main()
 }
 #endif
 
+#if 0
 struct Data { }; // C 표준에서는 허용 X
 
 int main()
 {
+}
+#endif
+
+// 아래 구조체가 크다고 가정합니다.
+struct Point {
+    int x;
+    int y;
+};
+
+#if 0
+struct Point Add(struct Point a, struct Point b)
+{
+    struct Point result;
+    result.x = a.x + b.x;
+    result.y = a.y + b.y;
+
+    return result;
+}
+#endif
+
+struct Point* Add(struct Point a, struct Point b)
+{
+    // static struct Point result; // 정적 메모리 => 함수가 재진입이 불가능합니다.
+
+    struct Point* result = malloc(sizeof(struct Point));
+    result->x = a.x + b.x;
+    result->y = a.y + b.y;
+
+    return result;
+}
+
+void Add(const struct Point* a, const struct Point* b, struct Point* result) // Out parameter
+{
+    result->x = a->x + b->x;
+    result->y = a->y + b->y;
+}
+
+int main(void)
+{
+    struct Point pt1 = { 10, 20 };
+    struct Point pt2 = { 30, 40 };
 }

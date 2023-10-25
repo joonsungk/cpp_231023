@@ -8,6 +8,10 @@ public:
     ~Sample() { cout << "~Sample()" << endl; }
 
     Sample(const Sample&) { cout << "Sample(const Sample&)" << endl; }
+
+    // C++11, Move Constructor
+    // => 복사를 수행하지 않고, 메모리를 재사용합니다.
+    Sample(Sample&&) { cout << "Sample(Sample&&)" << endl; }
 };
 
 #if 0
@@ -18,6 +22,7 @@ Sample& foo()
 }
 #endif
 
+#if 0
 // 사라지는 메모리에 대한 참조를 반환하기 때문에, 미정의 동작입니다.
 Sample foo()
 {
@@ -39,4 +44,50 @@ int main()
     cout << "----------" << endl;
     foo();
     cout << "----------" << endl;
+}
+#endif
+
+Sample foo()
+{
+    Sample s;
+    return s;
+}
+
+// g++ 19_복사생성자4.cpp -fno-elide-constructors -std=c++98
+/*
+Sample() // Sample a;
+
+Sample() // foo: Sample s;
+Sample(const Sample&) // 반환값으로 전달된 객체가 a로 복사
+~Sample() // foo: s 객체 파괴, ~Sample()
+
+~Sample() // 반환용 객체 파괴
+~Sample() // main: a객체 파괴
+*/
+
+// g++ 19_복사생성자4.cpp -fno-elide-constructors -std=c++11
+// : C++11부터 임시 객체(rvalue)를 복사하지 않고, 이동합니다.
+/*
+Sample()
+Sample(Sample&&)
+~Sample()
+Sample(Sample&&)
+~Sample()
+~Sample()
+*/
+
+// g++ 19_복사생성자4.cpp -fno-elide-constructors -std=c++17
+// : 복사(이동)을 수행하는 것이 컴파일 최적화에 의해 수행되었다면,
+//   C++17부터는 문법이 되었습니다.
+
+/*
+Sample()
+Sample(Sample&&)
+~Sample()
+~Sample()
+*/
+
+int main()
+{
+    Sample a = foo();
 }
