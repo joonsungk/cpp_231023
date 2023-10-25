@@ -4,6 +4,7 @@ using namespace std;
 
 // => 복사 정책
 // 2) 참조 계수
+//  : 소유권 공유
 
 class User {
     char* name;

@@ -4,19 +4,19 @@ using namespace std;
 
 // => 복사 정책
 // 3) 복사 금지
+//   : 소유권을 독점
+
+// 1. 복사를 금지하기 위해, 복사 생성자를 private 영역에 선언만 합니다.
+// 2. C++11, Delete Function
+//   복사 생성자를 삭제합니다.
 
 class User {
     char* name;
     int age;
 
-public:
-    // 컴파일러가 제공하는 복사 생성자 형태
-    User(const User& rhs)
-        : name { rhs.name }
-        , age { rhs.age }
-    {
-    }
+    User(const User& rhs) = delete;
 
+public:
     User(const char* s, int n)
         : age { n }
     {
