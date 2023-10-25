@@ -35,9 +35,11 @@ public:
     // 참조를 반환할 경우, const &를 반환해야 합니다.
     const Point& GetLeftTop() const { return leftTop; }
     Point& GetLeftTop() { return leftTop; }
-
     // C++에서 비상수 멤버 함수와 상수 멤버 함수를 동시에 제공할 수 있습니다.
     // => 참조를 반환할 때, 많이 사용합니다.
+
+    Point GetLeftTop2() const { return leftTop; }
+    // 객체 내부의 상태를 외부에서 연산을 수행하는 것이 좋지 않다.
 };
 
 // 상수 멤버 함수 / 비상수 멤버 함수를 모두 제공할 경우
