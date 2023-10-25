@@ -77,4 +77,6 @@ int main()
     for (int i = 0; i < 3; ++i) {
         cout << p3[i] << endl;
     }
+
+    delete[] p3;
 }

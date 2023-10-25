@@ -47,4 +47,5 @@ int main()
 //  false: 거짓
 int main()
 {
+    cout << sizeof(bool) << endl; // 1
 }

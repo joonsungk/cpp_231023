@@ -42,14 +42,14 @@ void foo(int& r)
     cout << "lvalue reference" << endl;
 }
 
-void foo(int&& r)
-{
-    cout << "rvalue reference" << endl;
-}
-
 void foo(const int& r)
 {
     cout << "const lvalue reference" << endl;
+}
+
+void foo(int&& r)
+{
+    cout << "rvalue reference" << endl;
 }
 
 int main()

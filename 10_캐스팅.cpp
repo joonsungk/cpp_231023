@@ -25,6 +25,8 @@ using namespace std;
 
 //  - const_cast
 //   : 메모리의 상수성을 제거해서, 타입의 불일치 문제를 해결하기 위해 사용하는 연산자입니다.
+//       const T* -> T*
+//    volatile T* -> T*
 
 //  - dynamic_cast
 
