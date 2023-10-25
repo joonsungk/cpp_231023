@@ -19,6 +19,7 @@ void foo(Sample s) // Sample(const Sample&)
 } // ~Sample()
 #endif
 
+#if 0
 // * 핵심: 객체를 함수의 인자로 전달할 때, call by value의 의도로 사용한다면,
 //        const&를 이용해야 합니다.
 //    "불필요한 객체의 복사 생성/소멸 비용을 제거하기 위해서"
@@ -36,3 +37,36 @@ int main()
     foo(s);
     cout << "------------" << endl;
 }
+#endif
+
+template <typename TYPE>
+class Stack {
+public:
+    // void Push(TYPE n)
+    //  : 템플릿에서도 인자로 전달 받을 때, const TYPE&를 사용합니다.
+    //    객체 타입으로 코드가 생성될 수 있기 때문입니다.
+    void Push(const TYPE& n)
+    {
+        //...
+    }
+};
+int main()
+{
+    Stack<int> s;
+    // -> void Push(const int& n)
+
+    Stack<Sample> s2;
+    // -> void Push(const Sample& n)
+}
+
+#if 0
+int main()
+{
+    Stack<int> s;
+    s.Push(10);
+    // void Push(int n)
+
+    Stack<Sample> s2;
+    // -> void Push(Sample n)
+}
+#endif
