@@ -61,11 +61,13 @@ int main()
 }
 #endif
 
+#if 1
 class Car {
     int age; // 4
     int speed; // 4
     double height; // 8
 
+public:
     static int cnt;
 };
 
@@ -73,5 +75,12 @@ int Car::cnt = 0;
 
 int main()
 {
+    Car c1, c2;
+    cout << &c1.cnt << endl;
+    cout << &c2.cnt << endl;
+
+    cout << &Car::cnt << endl;
+
     cout << sizeof(Car) << endl;
 }
+#endif
