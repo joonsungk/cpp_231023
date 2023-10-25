@@ -9,7 +9,7 @@ using namespace std;
 
 #include <stack>
 
-#if 0
+#if 1
 int main()
 {
     stack<int> s;
@@ -31,6 +31,7 @@ int main()
 }
 #endif
 
+#if 0
 // 선형 자료구조(컨테이너/컬렉션)
 // - vector: 연속된 메모리를 사용하는 동적 배열
 // -   list: 연결 리스트
@@ -51,3 +52,4 @@ int main()
         cout << e << endl;
     }
 }
+#endif
