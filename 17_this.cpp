@@ -10,7 +10,7 @@ public:
     // thiscall: 멤버 함수의 호출 방식
     //   - this를 통해 멤버 함수를 호출한 객체의 주소가 암묵적으로 전달됩니다.
 
-    // void Set(Point* this, int a, int b)
+    // void Point::Set(Point* this, int a, int b)
     void Set(int a, int b)
     {
         cout << "this: " << this << endl;
@@ -40,6 +40,8 @@ int main()
 
     cout << &pt1 << endl;
     pt1.Set(10, 20);
+    // Point::Set(&pt1, 10, 20);
+
     /*
         mov     r8d, 20
         mov     edx, 10
@@ -49,4 +51,5 @@ int main()
 
     cout << &pt2 << endl;
     pt2.Set(100, 200);
+    // Point::Set(&pt2, 100, 200);
 }

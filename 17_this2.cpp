@@ -15,6 +15,7 @@ int main()
 } // ~Sample();
 #endif
 
+#if 1
 // private 소멸자
 //  의도 - 지역 객체와 전역 객체를 생성할 수 없고, 오직 new를 통해서만 객체를 생성할 수 있습니다.
 
@@ -41,6 +42,7 @@ int main()
     // delete p;
     p->Destroy(); // Sample::Destroy(p);
 }
+#endif
 
 #if 0
 int main()
