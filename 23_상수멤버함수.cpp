@@ -37,6 +37,7 @@ public:
     }
 };
 
+#if 0
 void foo(const Point& pt)
 {
     // pt.SetX(10);
@@ -61,4 +62,18 @@ int main()
     const Point& r = pt;
     // const Point&
     // => 상수 멤버 함수만 호출이 가능합니다.
+}
+#endif
+
+int main()
+{
+    const Point pt { 10, 20 };
+    // 상수 객체는 const Point* / const Point&를 통해서만 참조할 수 있습니다.
+
+    // Point* p = &pt;
+    // Point& r = pt;
+    const Point* p = &pt; /* OK */
+    const Point& r = pt; /* OK */
+
+    Point pt2 = pt; // OK!, 복사는 허용됩니다.
 }
