@@ -10,7 +10,10 @@ using namespace std;
 
 // 3. friend
 //  => friend 선언된 클래스 또는 함수는 private 영역에 접근이 가능합니다.
-#if 0
+//   : Google Test
+//     - FRIEND_TEST
+
+#if 1
 class User {
     string name;
     int age;
@@ -28,14 +31,33 @@ public:
 
     friend void PrintUser(User user); // !!!
     // friend: 클래스의 캡슐화의 정책을 깨뜨리는 것이 아니라, 확장할 수 있습니다.
+
+    friend class UserPrinter;
 };
 #endif
-#include "User.h"
+// #include "User.h"
+
+class UserPrinter {
+public:
+    void Print(User user)
+    {
+        cout << user.name << ", " << user.age << endl;
+    }
+};
+
+void PrintUser(User user)
+{
+    cout << user.name << ", " << user.age << endl;
+    // cout << user.GetName() << ", " << user.GetAge() << endl;
+}
 
 int main()
 {
     User user("Tom", 42);
     PrintUser(user);
+
+    UserPrinter printer;
+    printer.Print(user);
 
     // cout << user.name << ", " << user.age << endl;
     // cout << user.GetName() << ", " << user.GetAge() << endl;
