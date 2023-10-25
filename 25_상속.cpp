@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-// 상속(Inheritence)
+// 상속(Inheritance)
 // => 연관된 클래스의 공통의 기능을 캡슐화할 수 있습니다.
 
 #if 0
