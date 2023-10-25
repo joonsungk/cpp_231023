@@ -263,6 +263,8 @@ int main()
 }
 #endif
 
+// 7. 템플릿 도입
+#if 0
 template <typename TYPE>
 class Stack {
     TYPE* buff;
@@ -304,4 +306,27 @@ int main()
     cout << s1.Pop() << endl;
     cout << s1.Pop() << endl;
     cout << s1.Pop() << endl;
+}
+#endif
+
+#include <stack>
+
+int main()
+{
+    stack<int> s;
+
+    s.push(10);
+    s.push(20);
+    s.push(30);
+
+    // 데이터를 참조하는 연산과 제거하는 연산이 분리되어 있습니다.
+    // - 참조하는 연산: s.top();
+    // - 제거하는 연산: s.pop();
+
+    cout << s.top() << endl;
+    s.pop();
+    cout << s.top() << endl;
+    s.pop();
+    cout << s.top() << endl;
+    s.pop();
 }
