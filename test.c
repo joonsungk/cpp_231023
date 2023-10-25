@@ -53,6 +53,7 @@ int main()
 }
 #endif
 
+#if 0
 // C99 표준으로 _Bool 타입이 도입되었습니다.
 #include <stdbool.h>
 
@@ -60,4 +61,11 @@ int main()
 {
     _Bool b = 0;
     bool b2 = true;
+}
+#endif
+
+struct Data { }; // C 표준에서는 허용 X
+
+int main()
+{
 }
