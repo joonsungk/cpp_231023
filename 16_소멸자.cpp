@@ -27,6 +27,11 @@ public:
         strcpy(name, s);
     }
 
+    ~Person()
+    {
+        delete[] name;
+    }
+
     void Print()
     {
         cout << name << endl;
