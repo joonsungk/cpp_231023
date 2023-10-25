@@ -7,6 +7,8 @@ using namespace std;
 class Object {
 public:
     Object() { cout << "Object()" << endl; }
+    Object(int a, int b) { cout << "Object(int, int)" << endl; }
+
     ~Object() { cout << "~Object()" << endl; }
 };
 
@@ -50,10 +52,17 @@ int main()
 
     // Object(); -> 임시 객체 생성 문법
 
-    Object* p = new Object;
+    // Object* p = new Object;
     // 동적 메모리 할당 -> 기본 생성자 호출
+
+    // 동적 메모리 할당 -> Object(int, int) 생성자 호출
+    Object* p = new Object(10, 20);
+    // Object* p = new Object { 10, 20 };
     delete p;
 
-    Object p2;
+    // Object p2;
     // 스택 메모리 할당 -> 기본 생성자 호출
+
+    Object* p2 = new Object[3] { { 10, 20 }, {}, { 100, 200 } };
+    delete[] p2;
 }
