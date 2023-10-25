@@ -100,7 +100,8 @@ struct Point* Add(struct Point a, struct Point b)
     return result;
 }
 
-void Add(const struct Point* a, const struct Point* b, struct Point* result) // Out parameter
+void Add(const struct Point* a, const struct Point* b, // In parameter
+    struct Point* result) // Out parameter
 {
     result->x = a->x + b->x;
     result->y = a->y + b->y;

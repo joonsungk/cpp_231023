@@ -11,7 +11,7 @@ public:
 
     // C++11, Move Constructor
     // => 복사를 수행하지 않고, 메모리를 재사용합니다.
-    Sample(Sample&&) { cout << "Sample(Sample&&)" << endl; }
+    // Sample(Sample&&) { cout << "Sample(Sample&&)" << endl; }
 };
 
 #if 0
@@ -67,6 +67,9 @@ Sample(const Sample&) // 반환값으로 전달된 객체가 a로 복사
 
 // g++ 19_복사생성자4.cpp -fno-elide-constructors -std=c++11
 // : C++11부터 임시 객체(rvalue)를 복사하지 않고, 이동합니다.
+// => 반드시 이동 생성자(Sample(Sample&&))가 제공되어야만 처리됩니다.
+//  : 복사를 통해 처리할지 이동을 통해 처리할지는 이동 생성자 여부에 의해 결정됩니다.
+
 /*
 Sample()
 Sample(Sample&&)
@@ -79,6 +82,8 @@ Sample(Sample&&)
 // g++ 19_복사생성자4.cpp -fno-elide-constructors -std=c++17
 // : 복사(이동)을 수행하는 것이 컴파일 최적화에 의해 수행되었다면,
 //   C++17부터는 문법이 되었습니다.
+// => 생략은 무조건 처리됩니다.
+//  : 복사를 통해 처리할지 이동을 통해 처리할지는 이동 생성자 여부에 의해 결정됩니다.
 
 /*
 Sample()
