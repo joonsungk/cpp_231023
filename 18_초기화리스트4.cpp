@@ -15,8 +15,8 @@ class Point {
 public:
     Point()
     {
-        x = 10; /* 대입 */
-        y = 20; /* 대입 */
+        // x = 10; /* 대입 */
+        // y = 20; /* 대입 */
     }
 
     Point(int a, int b)
@@ -31,6 +31,9 @@ public:
 
 int main()
 {
+    Point pt2;
+    pt2.Print();
+
     Point pt { 50, 60 };
     pt.Print();
 }
