@@ -23,7 +23,7 @@ void foo(Sample s) // Sample(const Sample&)
 // * 핵심: 객체를 함수의 인자로 전달할 때, call by value의 의도로 사용한다면,
 //        const&를 이용해야 합니다.
 //    "불필요한 객체의 복사 생성/소멸 비용을 제거하기 위해서"
-void foo(const Sample& s)
+void foo(const Sample& s) // 참조를 읽기 전용 목적으로만 사용하겠다.
 {
 }
 
@@ -39,6 +39,7 @@ int main()
 }
 #endif
 
+#if 1
 template <typename TYPE>
 class Stack {
 public:
@@ -58,6 +59,7 @@ int main()
     Stack<Sample> s2;
     // -> void Push(const Sample& n)
 }
+#endif
 
 #if 0
 int main()
