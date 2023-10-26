@@ -33,6 +33,9 @@ int main()
 }
 #endif
 
+// 사례
+// Java: Vector: 내부의 data를 protected로 제공하고 있습니다.
+
 // * 부모 클래스의 멤버 데이터도 반드시 private 만들어야 합니다.
 //   자식 클래스에서 부모 클래스의 멤버 데이터에 접근을, 멤버 함수를 통해서 수행하도록 만들어야 합니다.
 class Animal {
