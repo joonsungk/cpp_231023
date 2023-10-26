@@ -1,5 +1,6 @@
 // 27_추상클래스4.cpp
 #include <iostream>
+#include <string>
 using namespace std;
 
 // 인터페이스
