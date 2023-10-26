@@ -21,6 +21,7 @@ using namespace std;
 //    "새로운 기능이 추가되어도, 기존 코드는 수정되면 안된다."
 
 // 7. 다형성은 OCP를 만족합니다.
+//   => 상속의 목적은 "다형성" 입니다.
 
 class Shape {
 public:
