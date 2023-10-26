@@ -22,4 +22,8 @@ int main()
     // => Upcasting
     Animal* p2 = &d;
     Animal& r2 = d;
+
+    // * Downcasting은 암묵적인 변환이 허용되지 않습니다.
+    // Dog* p = &a; /* Error! */
+    // Dog& r = a; /* Error! */
 }
