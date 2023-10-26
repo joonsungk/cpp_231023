@@ -11,6 +11,8 @@ class User {
     int age;
 
     int* ref; // !!
+    // 스레드 안전해야 합니다.
+    // => 동기화 처리
 
 public:
     User(const User& rhs)

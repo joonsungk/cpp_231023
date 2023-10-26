@@ -18,12 +18,10 @@ public:
 Sample& foo()
 {
     Sample s;
-    return s;
+    return s; /* 미정의 동작: 사라지는 메모리에 대한 참조를 반환하기 때문에, 미정의 동작입니다. */
 }
 #endif
 
-#if 0
-// 사라지는 메모리에 대한 참조를 반환하기 때문에, 미정의 동작입니다.
 Sample foo()
 {
     Sample s;
@@ -45,7 +43,6 @@ int main()
     foo();
     cout << "----------" << endl;
 }
-#endif
 
 Sample foo()
 {
@@ -91,8 +88,9 @@ Sample(Sample&&)
 ~Sample()
 ~Sample()
 */
-
+#if 0
 int main()
 {
     Sample a = foo();
 }
+#endif

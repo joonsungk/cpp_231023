@@ -81,7 +81,9 @@ public:
     }
 };
 
-// Move => Rvalue Reference
+// Rvalue Reference
+// 1) 이동
+// 2) Perfect Forwarding(완벽한 전달) - *
 
 int main()
 {
