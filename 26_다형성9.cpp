@@ -24,7 +24,7 @@ public:
 
     void Draw() const override { cout << "Rect Draw" << endl; }
 
-    virtual Shape* Clone() const override
+    Shape* Clone() const override
     {
         return new Rect(*this);
     }
@@ -36,7 +36,7 @@ public:
 
     void Draw() const override { cout << "Circle Draw" << endl; }
 
-    virtual Shape* Clone() const override
+    Shape* Clone() const override
     {
         return new Circle(*this);
     }
