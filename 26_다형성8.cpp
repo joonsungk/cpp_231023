@@ -77,3 +77,12 @@ int main()
         delete e;
     }
 }
+
+// Unix / Linux
+// : VFS(Virtual File System)
+// "다형성"
+
+// open
+// read     ---> 일반 파일     ---> 파일 입출력
+// write         소켓 파일     ---> 네트워크 입출력
+// close       디바이스 특수 파일 ---> 디바이스 제어
