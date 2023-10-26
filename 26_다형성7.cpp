@@ -25,7 +25,7 @@ public:
 
     // 자식의 소멸자에 override를 통해, 부모의 소멸자가 가상이 아닌 경우,
     // 컴파일 오류가 발생합니다.
-    ~Dog() override
+    ~Dog()
     {
         cout << "~Dog()" << endl;
 
@@ -38,7 +38,11 @@ int main()
     Animal* p = new Dog;
 
     delete p;
-    // Animal::~Animal()
+    // 정적 바인딩: p의 타입을 보고 소멸자가 호출
+    //  -> Animal::~Animal()
+
+    // 동적 바인딩: 실행시간에 실제로 p가 참조하는 객체의 타입을 조사합니다.
+    //  -> Dog::~Dog();
 
     // Dog d;
 }

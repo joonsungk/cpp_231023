@@ -6,6 +6,9 @@ class Animal {
 };
 
 class Dog : public Animal { };
+// is-a 관계
+// : <자식 클래스> is a <부모 클래스>
+//  ->  Dog is an Animal
 
 // class Dog { };
 
