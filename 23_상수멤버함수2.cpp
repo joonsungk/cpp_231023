@@ -34,7 +34,8 @@ public:
     // 상수 멤버 함수는 멤버 데이터를 const 취급합니다.
     // 참조를 반환할 경우, const &를 반환해야 합니다.
     const Point& GetLeftTop() const { return leftTop; }
-    // Point& GetLeftTop() { return leftTop; }
+    Point& GetLeftTop() { return leftTop; }
+
     // C++에서 비상수 멤버 함수와 상수 멤버 함수를 동시에 제공할 수 있습니다.
     // => 참조를 반환할 때, 많이 사용합니다.
 
@@ -70,19 +71,22 @@ void foo(const Rect& r)
 
 int main()
 {
-#if 0
+#if 1
     Rect r { 10, 20 };
     Point& pt = r.GetLeftTop();
     pt.Move(100, 200);
     pt.Print();
 #endif
 
+#if 0
     Rect r { 10, 20 };
     const Point& pt = r.GetLeftTop2();
     Point& rpt = const_cast<Point&>(pt);
     rpt.Move(100, 200);
 
+
     r.Print();
+#endif
 }
 
 // cppcon.org

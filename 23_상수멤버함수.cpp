@@ -65,6 +65,7 @@ int main()
 }
 #endif
 
+#if 1
 int main()
 {
     const Point pt { 10, 20 };
@@ -77,3 +78,4 @@ int main()
 
     Point pt2 = pt; // OK!, 복사는 허용됩니다.
 }
+#endif
