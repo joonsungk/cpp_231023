@@ -57,7 +57,8 @@ int main()
     // : 실행 시간에 타입을 조사해서, 잘못된 타입인 경우, 캐스팅 결과로 nullptr을 반환합니다.
 
     Animal a;
-    Animal* p = &a;
+    // Animal* p = &a;
+    Animal* p = &d;
 
     Dog* pDog = dynamic_cast<Dog*>(p);
     if (pDog) {
