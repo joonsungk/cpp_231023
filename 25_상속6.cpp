@@ -33,7 +33,7 @@ int main()
 // => 마이어스의 싱글톤
 class Cursor {
 private:
-    Cursor() { }
+    Cursor() { cout << "Cursor()" << endl; }
 
     // 복사와 이동을 금지해야 합니다.
     Cursor(const Cursor&) = delete;
@@ -44,14 +44,19 @@ public:
     static Cursor& GetInstance()
     {
         static Cursor c;
+        // GetInstance()가 처음 호출되는 시점에 객체가 생성되고, 이후에는 참조합니다.
+
         return c;
     }
 };
 
 int main()
 {
+    cout << "----" << endl;
     Cursor& c1 = Cursor::GetInstance();
+    cout << "----" << endl;
     Cursor& c2 = Cursor::GetInstance();
+    cout << "----" << endl;
 
     cout << &c1 << endl;
     cout << &c2 << endl;
