@@ -41,14 +41,42 @@ class Derived : protected Base {
 //           private 상속
 // protected     --->      private
 // public                  private
-#if 1
+#if 0
 class Derived : private Base {
 };
-#endif
 
 int main()
 {
     Derived d;
     // d.f2();
     // d.f3();
+}
+#endif
+
+//-----
+#include <string>
+
+class User {
+    string name;
+
+protected:
+    string GetName() const { return name; }
+
+public:
+    virtual ~User() { }
+};
+
+class SuperUser : public User {
+    // 부모가 제공하는 protected를 public으로 변경할 수 있습니다.
+public:
+    // string GetName() const { return User::GetName(); }
+
+    using User::GetName;
+    // 부모의 protected를 public으로 변경합니다.
+};
+
+int main()
+{
+    SuperUser user;
+    user.GetName();
 }
