@@ -17,9 +17,9 @@ public:
 #if 0
 // 전역 객체
 Sample s;
-
 Sample& foo()
 {
+
     return s;
     // 1) s --> 반환용 임시 객체: Sample(const Sample&)
     //     복사 생성
@@ -34,6 +34,7 @@ int main()
 }
 #endif
 
+#if 1
 #include <stack>
 
 int main()
@@ -49,3 +50,4 @@ int main()
     cout << s.top() << endl;
     s.pop();
 }
+#endif

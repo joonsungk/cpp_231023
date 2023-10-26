@@ -51,6 +51,7 @@ public:
         //...
     }
 };
+
 int main()
 {
     Stack<int> s;
