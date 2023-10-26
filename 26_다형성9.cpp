@@ -9,6 +9,9 @@ public:
     virtual ~Shape() { }
 
     virtual void Draw() const { cout << "Shape Draw" << endl; }
+
+    // Prototype Pattern
+    //  - 다형성을 이용한 객체의 복제
     virtual Shape* Clone() const
     {
         return new Shape(*this); // 복사 생성자 호출
