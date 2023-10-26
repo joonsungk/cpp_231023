@@ -2,7 +2,8 @@
 #include <iostream>
 using namespace std;
 
-#if 0
+#if 1
+// 문제점: Car의 접근 제어를 사용할 수 없습니다.
 int cnt = 0;
 
 class Car {
@@ -31,7 +32,7 @@ int main()
 // 2) 정적 멤버 데이터는 반드시 선언과 정의가 분리되어야 합니다.
 
 // 헤더 코드
-#if 0
+#if 1
 class Car {
 public:
     static int cnt; // 정적 멤버 데이터 선언
@@ -61,7 +62,7 @@ int main()
 }
 #endif
 
-#if 1
+#if 0
 class Car {
     int age; // 4
     int speed; // 4

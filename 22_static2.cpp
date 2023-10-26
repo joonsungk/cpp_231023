@@ -22,8 +22,14 @@ public:
     // => 정적 멤버 함수
     //  : this가 전달되지 않습니다.
     // "일반함수와 동일한데, 접근 제어를 사용할 수 있는 함수입니다."
-    static int GetCount2() { return cnt; }
+    // static int GetCount2() { return cnt; }
+
+    // static은 선언부에만 작성됩니다.
+    static int GetCount2();
 };
+
+// static
+int Car::GetCount2() { return cnt; }
 
 int Car::cnt = 0;
 
@@ -36,5 +42,10 @@ int main()
 
     Car car;
     cout << car.GetCount() << endl;
+    // -> 멤버 함수 이므로, 객체의 주소가 this로 전달됩니다.
+    //  : Car::GetCount(&car);
+
     cout << car.GetCount2() << endl;
+    // -> 정적 멤버 함수 이므로, 객체의 주소가 전달되지 않습니다.
+    //  : Car::GetCount2();
 }
