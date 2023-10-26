@@ -2,6 +2,8 @@
 #include <iostream>
 using namespace std;
 
+// 원리를 보기 위한 예제 입니다.
+
 #if 0
 class AAA {
 public:
