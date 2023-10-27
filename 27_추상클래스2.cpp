@@ -21,10 +21,10 @@ public:
 // => OCP를 만족하지 않습니다.
 
 class Car {
-    FHDCamera* camera;
+    Camera* camera;
 
 public:
-    Car(FHDCamera* p)
+    Car(Camera* p)
         : camera { p }
     {
     }
@@ -41,7 +41,7 @@ public:
 
 int main()
 {
-    FHDCamera camera;
+    Camera camera;
     Car car { &camera };
 
     car.Go();

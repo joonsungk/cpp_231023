@@ -19,6 +19,7 @@ using namespace std;
 //     실수 -> 정수
 //     큰 표현 범위 정수 -> 작은 표현 범위 정수
 //     void* -> T*
+//     다운 캐스트
 
 //  - reinterpret_cast
 //   : 메모리를 재해석하는 목적으로 사용하는 연산자입니다.
@@ -29,6 +30,7 @@ using namespace std;
 //    volatile T* -> T*
 
 //  - dynamic_cast
+//  : 실행 시간에 타입을 조사해서, 안전하게 다운 캐스팅을 수행할 수 있습니다.
 
 int main()
 {

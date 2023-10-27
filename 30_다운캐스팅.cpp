@@ -28,7 +28,7 @@ int main()
 
 #if 0
     Animal a;
-    Animal* p = &a;
+    Animal* p = &d;
 
     Dog* pDog = static_cast<Dog*>(p);
     cout << pDog->GetName() << endl;
