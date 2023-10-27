@@ -47,7 +47,8 @@ int foo(const string& filename)
     if (filename == "") {
         // return -1; // 실패
         // throw -1;
-        throw 3.14;
+        // throw 3.14;
+        throw 'A';
     }
 
     // 성공
@@ -63,6 +64,8 @@ int main()
         cout << e << endl;
     } catch (const double& e) {
         cout << e << endl;
+    } catch (...) { // 처리되지 않은 모든 예외 타입을 처리합니다.
+        cout << "알수 없는 오류" << endl;
     }
 
     cout << "성공" << endl;
