@@ -136,6 +136,41 @@ public:
     void Draw() const { cout << "Draw Image: " << url << endl; }
 };
 
+template <typename TYPE>
+class Ptr {
+    TYPE* obj;
+
+public:
+    Ptr(TYPE* p = nullptr)
+        : obj { p }
+    {
+    }
+
+    Ptr(const Ptr& rhs)
+        : obj { rhs.obj }
+    {
+        obj->AddRef(); // 복사할 때 참조 계수 증가
+    }
+
+    ~Ptr()
+    {
+        obj->Release(); // 파괴될 때, 참조 계수 감소
+    }
+
+    TYPE& operator*() { return *obj; }
+    TYPE* operator->() { return obj; }
+};
+
+int main()
+{
+    Ptr<Image> p1 = new Image("https://a.com/a.jpg");
+    Ptr<Image> p2 = p1;
+
+    p1->Draw();
+    p2->Draw();
+}
+
+#if 0
 int main()
 {
     Image* p1 = new Image("https://a.com/a.jpg"); // 1
@@ -150,3 +185,4 @@ int main()
     p1->Release(); // 2 -> 1
     p2->Release(); // 1 -> 0
 }
+#endif
