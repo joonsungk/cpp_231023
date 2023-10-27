@@ -32,6 +32,7 @@ public:
     virtual void Cry() const { cout << "Dog Cry" << endl; }
 };
 
+#if 1
 int main()
 {
     Animal a;
@@ -46,6 +47,7 @@ int main()
     Animal& ra = d;
     ra.Cry();
 }
+#endif
 
 #if 0
 int main()

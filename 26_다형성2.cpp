@@ -68,12 +68,13 @@ int main()
 }
 #endif
 
+#if 0
 // Duck Typing
 // : 어떤 객체가 오리처럼 꽥꽥거리고 뒤뚱뒤뚱 걷는다면, 오리다.
 
 // => C++은 템플릿을 기반으로 구현할 수 있습니다.
 
-#if 1
+
 class Dog {
     int age;
 
