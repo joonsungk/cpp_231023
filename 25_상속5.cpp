@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+#if 0
 class Animal {
     int age;
 
@@ -31,4 +32,36 @@ public:
 int main()
 {
     Dog d;
+}
+#endif
+
+#include <string>
+
+class Animal {
+    int age;
+
+public:
+    Animal(int n)
+        : age { n }
+    {
+    }
+};
+
+// 초기화 순서
+//  부모 클래스 생성자 호출 -> 선언된 멤버를 순서대로 초기화
+
+class Dog : public Animal {
+    string name;
+
+public:
+    Dog(int age, const string& s)
+        : Animal { age }
+        , name { s }
+    {
+    }
+};
+
+int main()
+{
+    Dog dog { 42, "Tom" };
 }
