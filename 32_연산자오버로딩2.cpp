@@ -22,7 +22,7 @@ ostream cout;
 }
 
 // 1. cout의 정확한 타입은 std::ostream 입니다.
-
+// 2. 연산자 재정의와 함수 오버로딩을 통해 제공되고 있습니다.
 int main()
 {
     int n = 42;
