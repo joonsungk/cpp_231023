@@ -30,6 +30,7 @@ public:
 };
 #endif
 
+// RAII(Resource Acquation Is Initialize)
 template <typename TYPE>
 class Ptr {
     TYPE* obj;
