@@ -66,7 +66,7 @@ int main()
 
     cout << pt << endl;
     // cout.operator<<(pt);
-    // operator<<(cout, pt);
+    // operator<<(cout, pt).operator<<(endl);
 
     cout << endl;
 }
