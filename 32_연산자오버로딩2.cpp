@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+#if 0
 namespace xstd {
 class ostream {
 public:
@@ -35,4 +36,37 @@ int main()
 
     xstd::cout << n << d;
     // cout.operator<<(n).operator<<(d)
+}
+#endif
+
+class Point {
+    int x;
+    int y;
+
+public:
+    Point(int a, int b)
+        : x { a }
+        , y { b }
+    {
+    }
+
+    friend ostream& operator<<(ostream& os, const Point& pt);
+};
+
+// 아래 함수를 통해 사용자 정의 타입을 표준 입출력 객체를 통해 처리할 수 있습니다.
+ostream& operator<<(ostream& os, const Point& pt)
+{
+    os << pt.x << ", " << pt.y;
+    return os;
+}
+
+int main()
+{
+    Point pt { 10, 20 };
+
+    cout << pt << endl;
+    // cout.operator<<(pt);
+    // operator<<(cout, pt);
+
+    cout << endl;
 }
