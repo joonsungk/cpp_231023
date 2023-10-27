@@ -35,7 +35,7 @@ int main()
 }
 #endif
 
-#if 0
+#if 1
 // 2. std::exception 기반으로 what을 통해 오류 메세지를 정의할 수 있습니다.
 class InvalidFileNameException : public std::exception {
 public:
@@ -61,7 +61,7 @@ int foo(const string& filename)
     }
 
     // ..
-    throw OutOfMemoryException();
+    // throw OutOfMemoryException();
 
     // 성공
     return 0;
@@ -117,6 +117,7 @@ int main()
 }
 #endif
 
+#if 0
 #include <vector>
 
 class Sample {
@@ -158,3 +159,4 @@ int main()
     v.push_back(s);
     cout << v.size() << ", " << v.capacity() << endl;
 }
+#endif
