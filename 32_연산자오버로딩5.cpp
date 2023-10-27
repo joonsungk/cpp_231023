@@ -12,10 +12,20 @@ public:
     {
     }
 
+    // ++v;
     Integer& operator++()
     {
         ++value;
         return *this;
+    }
+
+    // v++;
+    Integer operator++(int)
+    {
+        Integer temp { *this }; // 복사본
+        ++value;
+
+        return temp;
     }
 
     friend ostream& operator<<(ostream& os, const Integer& i);
@@ -29,17 +39,25 @@ ostream& operator<<(ostream& os, const Integer& i)
 // ++n;
 //   C: 증가된 n의 값
 // C++: 증가된 n의 참조
-
 int main()
 {
+    //   C: for (int i = 0 ; i < n; i++) {}
+    // C++: for (int i = 0 ; i < n; ++i) {}
+
     Integer v = 42;
-    ++ ++ ++v;
-    // v.operator++();
+    cout << ++v << endl;
+    // v.operator++(); // ++v;
+
+    cout << v++ << endl;
+    // C++: 내부의 값이 증가하고, 증가되기 이전의 복사본(값)
+
+    // v.operator++(int); // v++;
 
     cout << v << endl;
 
     int n = 42;
     ++ ++ ++n;
+    n++;
 
     cout << n << endl;
 }
