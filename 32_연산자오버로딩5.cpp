@@ -36,6 +36,41 @@ ostream& operator<<(ostream& os, const Integer& i)
     return os << i.value;
 }
 
+int main()
+{
+    Integer n = 42; // 생성자 호출
+    ++n;
+    // n.operator++()
+
+    cout << n << endl;
+
+    // Integer
+    /*
+        sub     rsp, 24
+        mov     DWORD PTR n$[rsp], 42           ; 0000002aH
+        mov     eax, DWORD PTR n$[rsp]
+        inc     eax
+        mov     DWORD PTR n$[rsp], eax
+        xor     eax, eax
+        add     rsp, 24
+        ret     0
+
+    */
+
+    // int
+    /*
+        sub     rsp, 24
+        mov     DWORD PTR n$[rsp], 42           ; 0000002aH
+        mov     eax, DWORD PTR n$[rsp]
+        inc     eax
+        mov     DWORD PTR n$[rsp], eax
+        xor     eax, eax
+        add     rsp, 24
+        ret     0
+    */
+}
+
+#if 0
 // ++n;
 //   C: 증가된 n의 값
 // C++: 증가된 n의 참조
@@ -61,3 +96,4 @@ int main()
 
     cout << n << endl;
 }
+#endif
