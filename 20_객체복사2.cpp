@@ -17,6 +17,27 @@ public:
         name = new char[strlen(rhs.name) + 1];
         strcpy(name, rhs.name);
     }
+
+    // a = a;
+    User& operator=(const User& rhs)
+    {
+        // 1. 자신과 동일한 객체인지 확인
+        if (this == &rhs) {
+            return *this;
+        }
+
+        // 2. 소유한 자원을 해지해야 합니다.
+        delete[] name;
+
+        // 3. 깊은 복사
+        name = new char[strlen(rhs.name) + 1];
+        strcpy(name, rhs.name);
+
+        age = rhs.age;
+
+        return *this;
+    }
+
     //-----
 
     User(const char* s, int n)
